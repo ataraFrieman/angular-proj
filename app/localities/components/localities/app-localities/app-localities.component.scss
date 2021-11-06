@@ -1,0 +1,17 @@
+$margin-between: 20px;
+
+
+ul  {
+    list-style-type: none;
+    margin-bottom: #{$margin-between};
+    padding: 0;
+    overflow: hidden;
+}
+  
+li{
+    margin-top: #{$margin-between};
+}
+
+input:focus {
+    outline: 2px solid #0dcaf0;
+  }

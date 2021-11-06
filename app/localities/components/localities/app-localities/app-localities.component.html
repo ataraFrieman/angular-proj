@@ -1,0 +1,17 @@
+<label for="site-search" class="p-2"> חיפוש </label>
+<input type="search" placeholder="חפש יישוב" class="border rounded" id="site-search"
+    (keyup)="searchLocality($event.target.value)" />
+<button (click)="sortLocalities()" class="border">מיין</button>
+
+
+<ul>
+    <li *ngFor="let loc of localitiesResult;index as i" class="border p-1">
+        {{loc.Value}}
+    </li>
+</ul>
+
+<form [formGroup]="localityForm" #formDirective="ngForm" (ngSubmit)="submitForm(localityForm, formDirective)">
+    <input formControlName="localityVal" type="text" placeholder="הקלד שם יישוב" class="border rounded" />
+    <button [disabled]="!localityForm.valid" type="submit" (click)="addLocality()" class="border">הוסף</button>
+    <button [disabled]="!localityForm.valid" type="submit" (click)="deleteLocality()" class="border">הורד</button>
+</form>
